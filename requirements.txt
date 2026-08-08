@@ -5,6 +5,7 @@ xgboost
 lightgbm
 catboost
 tabpfn
+python-dotenv
 pyarrow
 matplotlib
 seaborn
