@@ -59,7 +59,9 @@ TRAINING_SIZES = [
 
 DATASETS = {
     "adult": 1590,
-    # We'll add more datasets later
+    "bank-marketing": 1461,
+    "credit-g": 31,
+    "covertype": 1596,
 }
 
 # ==========================================================

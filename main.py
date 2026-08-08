@@ -1,61 +1,92 @@
-from src.config import RANDOM_SEEDS, TRAINING_SIZES
+from pathlib import Path
+
+import pandas as pd
+
+from src.config import (
+    RANDOM_SEEDS,
+    TRAINING_SIZES,
+    DATASETS,
+)
+
 from src.data.loaders import load_dataset
+
 from src.data.sampling import (
     train_test_split_data,
     generate_training_subsets,
 )
+
 from src.benchmark import benchmark_models
 
-import pandas as pd
 
-print("=" * 60)
-print("Loading dataset...")
-print("=" * 60)
+RESULTS_DIR = Path("results/csv")
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-X, y = load_dataset("adult")
 
-X_train, X_test, y_train, y_test = train_test_split_data(
-    X,
-    y,
-)
+for dataset_name in DATASETS:
 
-all_results = []
+    output_file = RESULTS_DIR / f"{dataset_name}.csv"
 
-for seed in RANDOM_SEEDS:
+    if output_file.exists():
 
-    print(f"\nSeed: {seed}")
+        print("=" * 60)
+        print(f"Skipping {dataset_name} (already completed)")
+        print("=" * 60)
+        continue
 
-    subsets = generate_training_subsets(
-        X_train,
-        y_train,
-        TRAINING_SIZES,
-        random_state=seed,
+    print()
+    print("=" * 60)
+    print(f"Dataset: {dataset_name}")
+    print("=" * 60)
+
+    X, y = load_dataset(dataset_name)
+
+    X_train, X_test, y_train, y_test = train_test_split_data(
+        X,
+        y,
     )
 
-    for size, (Xs, ys) in subsets.items():
+    all_results = []
 
-        print(f"  Samples: {size}")
+    for seed in RANDOM_SEEDS:
 
-        df = benchmark_models(
-            Xs,
-            ys,
-            X_test,
-            y_test,
-            size,
-            seed,
+        print(f"\nSeed: {seed}")
+
+        subsets = generate_training_subsets(
+            X_train,
+            y_train,
+            TRAINING_SIZES,
+            random_state=seed,
         )
 
-        all_results.append(df)
+        for size, (Xs, ys) in subsets.items():
 
-results = pd.concat(
-    all_results,
-    ignore_index=True,
-)
+            print(f"  Samples: {size}")
 
-results.to_csv(
-    "results/csv/tree_results.csv",
-    index=False,
-)
+            df = benchmark_models(
+                Xs,
+                ys,
+                X_test,
+                y_test,
+                size,
+                seed,
+            )
 
-print(f"\nSaved {len(results)} rows to results/csv/tree_results.csv")
-print("\nBenchmark completed.")
+            all_results.append(df)
+
+    results = pd.concat(
+        all_results,
+        ignore_index=True,
+    )
+
+    results.to_csv(
+        output_file,
+        index=False,
+    )
+
+    print()
+    print(f"Saved {len(results)} rows to {output_file}")
+
+print()
+print("=" * 60)
+print("ALL DATASETS COMPLETED")
+print("=" * 60)
