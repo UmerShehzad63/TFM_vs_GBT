@@ -21,7 +21,8 @@ from src.models.tabpfn_model import get_tabpfn
 
 warnings.filterwarnings(
     "ignore",
-    message="X does not have valid feature names*",
+    category=UserWarning,
+    module="lightgbm",
 )
 
 def benchmark_models(
