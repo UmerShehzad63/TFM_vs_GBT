@@ -43,13 +43,13 @@ def generate_training_subsets(
         if size > len(X_train):
             continue
 
-        X_subset = X_train.sample(
-            n=size,
+        X_subset, _, y_subset, _ = train_test_split(
+            X_train,
+            y_train,
+            train_size=size,
+            stratify=y_train,
             random_state=random_state,
-            replace=False,
         )
-
-        y_subset = y_train.loc[X_subset.index]
 
         subsets[size] = (
             X_subset,
