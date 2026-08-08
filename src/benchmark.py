@@ -3,9 +3,9 @@ Benchmark runner.
 """
 
 import time
-import pandas as pd
 import warnings
-
+import numpy as np
+import pandas as pd
 
 from sklearn.pipeline import Pipeline
 
@@ -15,7 +15,6 @@ from src.data.preprocessing import (
 )
 
 from src.metrics import evaluate
-
 from src.models.tree_models import get_tree_models
 from src.models.tabpfn_model import get_tabpfn
 
@@ -24,6 +23,7 @@ warnings.filterwarnings(
     category=UserWarning,
     module="lightgbm",
 )
+
 
 def benchmark_models(
     X_train,
@@ -36,15 +36,18 @@ def benchmark_models(
 
     results = []
 
-    # ===========================
-    # Tree Models
-    # ===========================
-
     tree_models = get_tree_models(seed)
 
     tree_preprocessor = build_tree_preprocessor(X_train)
 
     for name, model in tree_models.items():
+
+        values, counts = np.unique(y_train, return_counts=True)
+
+        print(
+            f"    {name} target distribution: "
+            f"{dict(zip(values.tolist(), counts.tolist()))}"
+        )
 
         pipeline = Pipeline([
             ("prep", tree_preprocessor),
@@ -72,11 +75,6 @@ def benchmark_models(
 
         results.append(metrics)
 
-    # ===========================
-    # TabPFN
-    # ===========================
-
-    # Skip extremely tiny datasets
     if sample_size >= 10:
 
         tab_preprocessor = build_tabpfn_preprocessor(X_train)
