@@ -4,6 +4,8 @@ Benchmark runner.
 
 import time
 import pandas as pd
+import warnings
+
 
 from sklearn.pipeline import Pipeline
 
@@ -17,6 +19,10 @@ from src.metrics import evaluate
 from src.models.tree_models import get_tree_models
 from src.models.tabpfn_model import get_tabpfn
 
+warnings.filterwarnings(
+    "ignore",
+    message="X does not have valid feature names*",
+)
 
 def benchmark_models(
     X_train,

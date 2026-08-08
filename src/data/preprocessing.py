@@ -66,7 +66,9 @@ def build_tree_preprocessor(X):
 
             )
 
-        ]
+        ],
+
+        force_int_remainder_cols=False
 
     )
 
@@ -131,6 +133,8 @@ def build_tabpfn_preprocessor(X):
 
             )
 
-        ]
+        ],
+
+        force_int_remainder_cols=False
 
     )
