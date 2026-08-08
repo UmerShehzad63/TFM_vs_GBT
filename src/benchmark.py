@@ -7,41 +7,41 @@ import pandas as pd
 
 from sklearn.pipeline import Pipeline
 
-from src.data.preprocessing import build_tree_preprocessor
+from src.data.preprocessing import (
+    build_tree_preprocessor,
+    build_tabpfn_preprocessor,
+)
+
 from src.metrics import evaluate
+
 from src.models.tree_models import get_tree_models
+from src.models.tabpfn_model import get_tabpfn
 
 
-def benchmark_tree_models(
-
+def benchmark_models(
     X_train,
-
     y_train,
-
     X_test,
-
     y_test,
-
     sample_size,
-
     seed,
-
 ):
 
     results = []
 
-    models = get_tree_models(seed)
+    # ===========================
+    # Tree Models
+    # ===========================
 
-    preprocessor = build_tree_preprocessor(X_train)
+    tree_models = get_tree_models(seed)
 
-    for name, model in models.items():
+    tree_preprocessor = build_tree_preprocessor(X_train)
+
+    for name, model in tree_models.items():
 
         pipeline = Pipeline([
-
-            ("prep", preprocessor),
-
-            ("model", model)
-
+            ("prep", tree_preprocessor),
+            ("model", model),
         ])
 
         start = time.perf_counter()
@@ -51,25 +51,51 @@ def benchmark_tree_models(
         training_time = time.perf_counter() - start
 
         metrics = evaluate(
-
             pipeline,
-
             X_test,
-
-            y_test
-
+            y_test,
         )
 
         metrics.update({
-
             "Model": name,
-
             "Samples": sample_size,
-
             "Seed": seed,
+            "Training_Time": training_time,
+        })
 
-            "Training_Time": training_time
+        results.append(metrics)
 
+    # ===========================
+    # TabPFN
+    # ===========================
+
+    # Skip extremely tiny datasets
+    if sample_size >= 10:
+
+        tab_preprocessor = build_tabpfn_preprocessor(X_train)
+
+        X_train_tab = tab_preprocessor.fit_transform(X_train)
+        X_test_tab = tab_preprocessor.transform(X_test)
+
+        model = get_tabpfn()
+
+        start = time.perf_counter()
+
+        model.fit(X_train_tab, y_train)
+
+        training_time = time.perf_counter() - start
+
+        metrics = evaluate(
+            model,
+            X_test_tab,
+            y_test,
+        )
+
+        metrics.update({
+            "Model": "TabPFN",
+            "Samples": sample_size,
+            "Seed": seed,
+            "Training_Time": training_time,
         })
 
         results.append(metrics)

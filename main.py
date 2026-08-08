@@ -4,7 +4,7 @@ from src.data.sampling import (
     train_test_split_data,
     generate_training_subsets,
 )
-from src.benchmark import benchmark_tree_models
+from src.benchmark import benchmark_models
 
 import pandas as pd
 
@@ -35,7 +35,7 @@ for seed in RANDOM_SEEDS:
 
         print(f"  Samples: {size}")
 
-        df = benchmark_tree_models(
+        df = benchmark_models(
             Xs,
             ys,
             X_test,
