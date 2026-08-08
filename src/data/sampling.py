@@ -47,8 +47,8 @@ def generate_training_subsets(
             X_train,
             y_train,
             train_size=size,
-            stratify=y_train,
             random_state=random_state,
+            stratify=y_train,
         )
 
         subsets[size] = (
