@@ -1,0 +1,121 @@
+Dataset,Training_Regime,Metric,Comparison,N,TabPFN_Mean,Tree_Mean,Mean_Difference,Difference_SD
+Adult,Small,Accuracy,TabPFN vs XGBoost,30,0.7912,0.7749,0.0163,0.0321
+Adult,Small,Accuracy,TabPFN vs LightGBM,30,0.7912,0.7693,0.0219,0.0323
+Adult,Small,Accuracy,TabPFN vs CatBoost,30,0.7912,0.7961,-0.0049,0.0258
+Adult,Small,Precision,TabPFN vs XGBoost,30,0.6178,0.4634,0.1544,0.2622
+Adult,Small,Precision,TabPFN vs LightGBM,30,0.6178,0.2773,0.3405,0.2999
+Adult,Small,Precision,TabPFN vs CatBoost,30,0.6178,0.663,-0.0452,0.1527
+Adult,Small,Recall,TabPFN vs XGBoost,30,0.3355,0.345,-0.0096,0.1448
+Adult,Small,Recall,TabPFN vs LightGBM,30,0.3355,0.2216,0.1139,0.1723
+Adult,Small,Recall,TabPFN vs CatBoost,30,0.3355,0.3201,0.0154,0.104
+Adult,Small,F1,TabPFN vs XGBoost,30,0.3935,0.3785,0.015,0.1508
+Adult,Small,F1,TabPFN vs LightGBM,30,0.3935,0.2398,0.1537,0.1811
+Adult,Small,F1,TabPFN vs CatBoost,30,0.3935,0.4047,-0.0111,0.0965
+Adult,Small,ROC_AUC,TabPFN vs XGBoost,30,0.7993,0.7304,0.0689,0.0895
+Adult,Small,ROC_AUC,TabPFN vs LightGBM,30,0.7993,0.6419,0.1574,0.1152
+Adult,Small,ROC_AUC,TabPFN vs CatBoost,30,0.7993,0.8015,-0.0023,0.0318
+Adult,Medium,Accuracy,TabPFN vs XGBoost,25,0.8401,0.8243,0.0159,0.0073
+Adult,Medium,Accuracy,TabPFN vs LightGBM,25,0.8401,0.8222,0.0179,0.01
+Adult,Medium,Accuracy,TabPFN vs CatBoost,25,0.8401,0.8444,-0.0043,0.0047
+Adult,Medium,Precision,TabPFN vs XGBoost,25,0.7097,0.6588,0.051,0.0225
+Adult,Medium,Precision,TabPFN vs LightGBM,25,0.7097,0.6539,0.0558,0.0283
+Adult,Medium,Precision,TabPFN vs CatBoost,25,0.7097,0.7354,-0.0257,0.0139
+Adult,Medium,Recall,TabPFN vs XGBoost,25,0.5718,0.5589,0.0128,0.0348
+Adult,Medium,Recall,TabPFN vs LightGBM,25,0.5718,0.5519,0.0199,0.0367
+Adult,Medium,Recall,TabPFN vs CatBoost,25,0.5718,0.5537,0.0181,0.0234
+Adult,Medium,F1,TabPFN vs XGBoost,25,0.6303,0.6024,0.0279,0.0218
+Adult,Medium,F1,TabPFN vs LightGBM,25,0.6303,0.5964,0.0339,0.0281
+Adult,Medium,F1,TabPFN vs CatBoost,25,0.6303,0.6289,0.0014,0.0151
+Adult,Medium,ROC_AUC,TabPFN vs XGBoost,25,0.89,0.8629,0.0271,0.0099
+Adult,Medium,ROC_AUC,TabPFN vs LightGBM,25,0.89,0.8589,0.0311,0.0215
+Adult,Medium,ROC_AUC,TabPFN vs CatBoost,25,0.89,0.8922,-0.0022,0.0055
+Adult,Large,Accuracy,TabPFN vs XGBoost,50,0.8586,0.8559,0.0027,0.0071
+Adult,Large,Accuracy,TabPFN vs LightGBM,50,0.8586,0.8598,-0.0011,0.0075
+Adult,Large,Accuracy,TabPFN vs CatBoost,50,0.8586,0.866,-0.0074,0.0037
+Adult,Large,Precision,TabPFN vs XGBoost,50,0.7509,0.7293,0.0216,0.021
+Adult,Large,Precision,TabPFN vs LightGBM,50,0.7509,0.7434,0.0075,0.0235
+Adult,Large,Precision,TabPFN vs CatBoost,50,0.7509,0.7738,-0.0229,0.0084
+Adult,Large,Recall,TabPFN vs XGBoost,50,0.6128,0.6337,-0.0208,0.0121
+Adult,Large,Recall,TabPFN vs LightGBM,50,0.6128,0.6332,-0.0204,0.0127
+Adult,Large,Recall,TabPFN vs CatBoost,50,0.6128,0.6219,-0.0091,0.0133
+Adult,Large,F1,TabPFN vs XGBoost,50,0.6747,0.678,-0.0033,0.0137
+Adult,Large,F1,TabPFN vs LightGBM,50,0.6747,0.6837,-0.009,0.0145
+Adult,Large,F1,TabPFN vs CatBoost,50,0.6747,0.6894,-0.0147,0.0102
+Adult,Large,ROC_AUC,TabPFN vs XGBoost,50,0.9116,0.9076,0.004,0.0092
+Adult,Large,ROC_AUC,TabPFN vs LightGBM,50,0.9116,0.9123,-0.0006,0.0088
+Adult,Large,ROC_AUC,TabPFN vs CatBoost,50,0.9116,0.9182,-0.0066,0.0036
+Bank Marketing,Small,Accuracy,TabPFN vs XGBoost,30,0.8819,0.8734,0.0085,0.0191
+Bank Marketing,Small,Accuracy,TabPFN vs LightGBM,30,0.8819,0.8736,0.0083,0.0188
+Bank Marketing,Small,Accuracy,TabPFN vs CatBoost,30,0.8819,0.8856,-0.0037,0.0101
+Bank Marketing,Small,Precision,TabPFN vs XGBoost,30,0.3811,0.2422,0.1389,0.2288
+Bank Marketing,Small,Precision,TabPFN vs LightGBM,30,0.3811,0.1592,0.2219,0.2516
+Bank Marketing,Small,Precision,TabPFN vs CatBoost,30,0.3811,0.5308,-0.1497,0.3033
+Bank Marketing,Small,Recall,TabPFN vs XGBoost,30,0.0859,0.1065,-0.0206,0.0825
+Bank Marketing,Small,Recall,TabPFN vs LightGBM,30,0.0859,0.0747,0.0112,0.0693
+Bank Marketing,Small,Recall,TabPFN vs CatBoost,30,0.0859,0.0555,0.0305,0.0673
+Bank Marketing,Small,F1,TabPFN vs XGBoost,30,0.1266,0.1442,-0.0177,0.097
+Bank Marketing,Small,F1,TabPFN vs LightGBM,30,0.1266,0.0981,0.0284,0.0815
+Bank Marketing,Small,F1,TabPFN vs CatBoost,30,0.1266,0.0926,0.0339,0.0865
+Bank Marketing,Small,ROC_AUC,TabPFN vs XGBoost,30,0.752,0.6437,0.1083,0.0837
+Bank Marketing,Small,ROC_AUC,TabPFN vs LightGBM,30,0.752,0.6195,0.1325,0.0977
+Bank Marketing,Small,ROC_AUC,TabPFN vs CatBoost,30,0.752,0.7326,0.0194,0.0336
+Bank Marketing,Medium,Accuracy,TabPFN vs XGBoost,25,0.8953,0.8824,0.0129,0.0057
+Bank Marketing,Medium,Accuracy,TabPFN vs LightGBM,25,0.8953,0.8829,0.0124,0.0058
+Bank Marketing,Medium,Accuracy,TabPFN vs CatBoost,25,0.8953,0.8931,0.0022,0.0037
+Bank Marketing,Medium,Precision,TabPFN vs XGBoost,25,0.6237,0.4965,0.1271,0.062
+Bank Marketing,Medium,Precision,TabPFN vs LightGBM,25,0.6237,0.5012,0.1224,0.066
+Bank Marketing,Medium,Precision,TabPFN vs CatBoost,25,0.6237,0.6022,0.0215,0.0661
+Bank Marketing,Medium,Recall,TabPFN vs XGBoost,25,0.27,0.2907,-0.0208,0.081
+Bank Marketing,Medium,Recall,TabPFN vs LightGBM,25,0.27,0.2732,-0.0033,0.0868
+Bank Marketing,Medium,Recall,TabPFN vs CatBoost,25,0.27,0.2335,0.0364,0.0519
+Bank Marketing,Medium,F1,TabPFN vs XGBoost,25,0.3652,0.3655,-0.0002,0.0859
+Bank Marketing,Medium,F1,TabPFN vs LightGBM,25,0.3652,0.3519,0.0133,0.0909
+Bank Marketing,Medium,F1,TabPFN vs CatBoost,25,0.3652,0.3285,0.0367,0.0539
+Bank Marketing,Medium,ROC_AUC,TabPFN vs XGBoost,25,0.8907,0.8364,0.0543,0.0165
+Bank Marketing,Medium,ROC_AUC,TabPFN vs LightGBM,25,0.8907,0.8388,0.0519,0.017
+Bank Marketing,Medium,ROC_AUC,TabPFN vs CatBoost,25,0.8907,0.88,0.0107,0.0105
+Bank Marketing,Large,Accuracy,TabPFN vs XGBoost,50,0.909,0.8983,0.0107,0.0022
+Bank Marketing,Large,Accuracy,TabPFN vs LightGBM,50,0.909,0.9009,0.0081,0.0026
+Bank Marketing,Large,Accuracy,TabPFN vs CatBoost,50,0.909,0.9052,0.0037,0.0016
+Bank Marketing,Large,Precision,TabPFN vs XGBoost,50,0.6483,0.5884,0.0598,0.0217
+Bank Marketing,Large,Precision,TabPFN vs LightGBM,50,0.6483,0.6098,0.0385,0.0265
+Bank Marketing,Large,Precision,TabPFN vs CatBoost,50,0.6483,0.6451,0.0032,0.0113
+Bank Marketing,Large,Recall,TabPFN vs XGBoost,50,0.4858,0.4302,0.0555,0.0334
+Bank Marketing,Large,Recall,TabPFN vs LightGBM,50,0.4858,0.4193,0.0665,0.0275
+Bank Marketing,Large,Recall,TabPFN vs CatBoost,50,0.4858,0.4215,0.0643,0.0212
+Bank Marketing,Large,F1,TabPFN vs XGBoost,50,0.5521,0.4963,0.0559,0.0212
+Bank Marketing,Large,F1,TabPFN vs LightGBM,50,0.5521,0.4957,0.0564,0.0172
+Bank Marketing,Large,F1,TabPFN vs CatBoost,50,0.5521,0.5077,0.0445,0.0135
+Bank Marketing,Large,ROC_AUC,TabPFN vs XGBoost,50,0.9339,0.906,0.0279,0.0092
+Bank Marketing,Large,ROC_AUC,TabPFN vs LightGBM,50,0.9339,0.9131,0.0208,0.0101
+Bank Marketing,Large,ROC_AUC,TabPFN vs CatBoost,50,0.9339,0.9225,0.0114,0.0032
+Credit-G,Small,Accuracy,TabPFN vs XGBoost,30,0.6998,0.6847,0.0152,0.0339
+Credit-G,Small,Accuracy,TabPFN vs LightGBM,30,0.6998,0.6962,0.0037,0.0286
+Credit-G,Small,Accuracy,TabPFN vs CatBoost,30,0.6998,0.7105,-0.0107,0.0272
+Credit-G,Small,Precision,TabPFN vs XGBoost,30,0.7322,0.7456,-0.0134,0.0279
+Credit-G,Small,Precision,TabPFN vs LightGBM,30,0.7322,0.7303,0.0019,0.0284
+Credit-G,Small,Precision,TabPFN vs CatBoost,30,0.7322,0.7406,-0.0084,0.0206
+Credit-G,Small,Recall,TabPFN vs XGBoost,30,0.9083,0.8421,0.0662,0.1017
+Credit-G,Small,Recall,TabPFN vs LightGBM,30,0.9083,0.9105,-0.0021,0.0892
+Credit-G,Small,Recall,TabPFN vs CatBoost,30,0.9083,0.9045,0.0038,0.0603
+Credit-G,Small,F1,TabPFN vs XGBoost,30,0.8083,0.7877,0.0206,0.0345
+Credit-G,Small,F1,TabPFN vs LightGBM,30,0.8083,0.806,0.0023,0.0282
+Credit-G,Small,F1,TabPFN vs CatBoost,30,0.8083,0.8139,-0.0056,0.0228
+Credit-G,Small,ROC_AUC,TabPFN vs XGBoost,30,0.6767,0.6376,0.0391,0.0497
+Credit-G,Small,ROC_AUC,TabPFN vs LightGBM,30,0.6767,0.5814,0.0953,0.0745
+Credit-G,Small,ROC_AUC,TabPFN vs CatBoost,30,0.6767,0.6922,-0.0155,0.0385
+Credit-G,Medium,Accuracy,TabPFN vs XGBoost,20,0.7365,0.7168,0.0198,0.0219
+Credit-G,Medium,Accuracy,TabPFN vs LightGBM,20,0.7365,0.7158,0.0208,0.0292
+Credit-G,Medium,Accuracy,TabPFN vs CatBoost,20,0.7365,0.7372,-0.0007,0.0306
+Credit-G,Medium,Precision,TabPFN vs XGBoost,20,0.7893,0.7868,0.0025,0.0197
+Credit-G,Medium,Precision,TabPFN vs LightGBM,20,0.7893,0.7875,0.0018,0.0219
+Credit-G,Medium,Precision,TabPFN vs CatBoost,20,0.7893,0.7745,0.0148,0.0183
+Credit-G,Medium,Recall,TabPFN vs XGBoost,20,0.8521,0.8168,0.0354,0.0293
+Credit-G,Medium,Recall,TabPFN vs LightGBM,20,0.8521,0.8136,0.0386,0.0406
+Credit-G,Medium,Recall,TabPFN vs CatBoost,20,0.8521,0.8825,-0.0304,0.0383
+Credit-G,Medium,F1,TabPFN vs XGBoost,20,0.8191,0.8013,0.0179,0.0162
+Credit-G,Medium,F1,TabPFN vs LightGBM,20,0.8191,0.7998,0.0193,0.0228
+Credit-G,Medium,F1,TabPFN vs CatBoost,20,0.8191,0.8245,-0.0054,0.0228
+Credit-G,Medium,ROC_AUC,TabPFN vs XGBoost,20,0.7714,0.7292,0.0422,0.0193
+Credit-G,Medium,ROC_AUC,TabPFN vs LightGBM,20,0.7714,0.7273,0.0441,0.0246
+Credit-G,Medium,ROC_AUC,TabPFN vs CatBoost,20,0.7714,0.7651,0.0063,0.0212
