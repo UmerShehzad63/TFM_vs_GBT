@@ -1,9 +1,17 @@
-# Abstract
+\section{Abstract}
+
+
 
 Tabular machine learning is traditionally dominated by gradient-boosted decision-tree algorithms, while recently developed tabular foundation models offer an alternative based on large-scale pretraining. This study empirically compares TabPFN with three established gradient-boosted tree algorithms—XGBoost, LightGBM, and CatBoost—across different training-data regimes.
 
+
+
 The benchmark evaluates the four models on three binary tabular classification datasets: Adult, Bank Marketing, and Credit-G. Five random seeds and multiple training sizes were used to evaluate both predictive performance and changes in model behaviour as the amount of training data increased. Performance was measured using Accuracy, Precision, Recall, F1-score, and ROC-AUC, while training and prediction times were recorded to examine computational trade-offs. The final benchmark contains 1,040 model-level observations.
 
+
+
 The results show that TabPFN can provide strong predictive performance, but its relative advantage is dataset-dependent. Bank Marketing provides the clearest evidence in favour of TabPFN, where it achieves the highest mean Accuracy, Recall, F1-score, and ROC-AUC and maintains strong performance across the evaluated training-data regimes. In contrast, CatBoost achieves the strongest aggregate performance on Adult and Credit-G. Statistical analysis identifies significant differences in 34 of 45 paired TabPFN-versus-tree comparisons at unadjusted p < 0.05; 31 remain significant after Holm correction. The direction of the differences varies across datasets and baseline models.
+
+
 
 The computational analysis reveals an important trade-off. TabPFN's predictive advantages in several settings are accompanied by substantially higher measured prediction times than the conventional tree-based models. Overall, the findings do not support the hypothesis that TabPFN universally outperforms gradient-boosted tree algorithms. Instead, they indicate that TabPFN is a complementary approach whose effectiveness depends on the dataset, evaluation metric, training-data regime, and computational requirements.

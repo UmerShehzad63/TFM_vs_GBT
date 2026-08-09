@@ -71,6 +71,8 @@ def main():
             "Wilcoxon_p",
             "Rank_Biserial_Effect",
             "Significant_p05",
+            "Holm_Adjusted_p",
+            "Significant_Holm_p05",
             "Direction",
             "Effect_Strength",
         ]
@@ -89,10 +91,10 @@ def main():
     numeric_columns = [
         "TabPFN_Mean",
         "Tree_Mean",
-        "TabPFN_Minus_Tree",
         "CI95_Low",
         "CI95_High",
         "Wilcoxon_p",
+        "Holm_Adjusted_p",
         "Rank_Biserial_Effect",
     ]
 
@@ -194,12 +196,12 @@ def main():
     print("SIGNIFICANT TABPFN COMPARISONS")
 
     significant = statistics[
-        statistics["Significant_p05"]
+        statistics["Significant_Holm_p05"]
     ]
 
     print(
         f"{len(significant)} / "
-        f"{len(statistics)} comparisons significant."
+        f"{len(statistics)} comparisons Holm-significant."
     )
 
     print()

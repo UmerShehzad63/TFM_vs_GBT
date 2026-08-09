@@ -1,0 +1,29 @@
+\section{Conclusion}
+
+
+
+This study presented an empirical comparison of TabPFN and three established gradient-boosted tree algorithms—XGBoost, LightGBM, and CatBoost—across different training-data regimes. The benchmark evaluated the models on three binary tabular classification datasets, using five random seeds and multiple training sizes to examine both overall predictive performance and changes in performance as additional training data became available.
+
+
+
+The results show that TabPFN can achieve highly competitive predictive performance, but its effectiveness is dataset-dependent. Bank Marketing provided the clearest evidence in favour of TabPFN, where it achieved the highest mean Accuracy, Recall, F1-score, and ROC-AUC and maintained strong performance across the evaluated training-data regimes. In contrast, CatBoost achieved the strongest overall results on Adult and Credit-G, demonstrating that conventional gradient-boosted tree methods remain highly competitive.
+
+
+
+The learning-curve analysis further showed that there is no universal relationship between training-set size and TabPFN's relative advantage. On Adult, CatBoost became increasingly competitive at larger training sizes, whereas TabPFN maintained an advantage across the evaluated regimes on Bank Marketing. Credit-G produced an intermediate pattern in which TabPFN remained competitive with the tree-based models but did not consistently outperform CatBoost.
+
+
+
+The statistical analysis supports these observations. A substantial proportion of the paired TabPFN-versus-tree comparisons were statistically significant, but the direction of the differences varied across datasets and baseline models. This indicates that statistical evidence for differences between the models should not be interpreted as evidence of universal TabPFN superiority.
+
+
+
+The computational results also revealed an important trade-off. Although TabPFN provided strong predictive performance in several settings, it required substantially more prediction time than the conventional tree-based models in the experimental environment. Consequently, model selection should consider both predictive performance and computational requirements.
+
+
+
+Overall, the findings suggest that TabPFN should be viewed as a complementary approach to gradient-boosted tree algorithms rather than as a universal replacement. Its advantages are most meaningful when the observed predictive improvements justify the additional computational cost. The results also demonstrate the value of evaluating tabular models across multiple training-data regimes, since model rankings can change as the amount of available training data increases.
+
+
+
+Future work could extend the benchmark to a larger and more diverse collection of tabular datasets, include additional tabular foundation models, evaluate multiclass and regression tasks, and investigate which measurable dataset characteristics are associated with stronger or weaker performance from pretrained tabular models. Such extensions would help determine whether the dataset-dependent patterns observed in this study generalize beyond the three datasets considered here.

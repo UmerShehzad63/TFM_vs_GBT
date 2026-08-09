@@ -1,0 +1,41 @@
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.02}
+\begin{longtable}{p{2.35cm}p{1.9cm}p{3.3cm}R{0.55cm}R{1.25cm}R{1.15cm}R{1.15cm}}
+\caption{Training-regime comparisons for ROC-AUC. Difference is TabPFN minus the tree-model mean.}\label{tab:training-regimes}\\
+\toprule
+Dataset & Training regime & Model comparison & $n$ & TabPFN & Tree & $\Delta$ \\
+\midrule
+\endfirsthead
+\toprule
+Dataset & Training regime & Model comparison & $n$ & TabPFN & Tree & $\Delta$ \\
+\midrule
+\endhead
+Adult & Small & TabPFN vs XGBoost & 30 & 0.7993 & 0.7304 & 0.0689 \\
+Adult & Small & TabPFN vs LightGBM & 30 & 0.7993 & 0.6419 & 0.1574 \\
+Adult & Small & TabPFN vs CatBoost & 30 & 0.7993 & 0.8015 & -0.0023 \\
+Adult & Medium & TabPFN vs XGBoost & 25 & 0.8900 & 0.8629 & 0.0271 \\
+Adult & Medium & TabPFN vs LightGBM & 25 & 0.8900 & 0.8589 & 0.0311 \\
+Adult & Medium & TabPFN vs CatBoost & 25 & 0.8900 & 0.8922 & -0.0022 \\
+Adult & Large & TabPFN vs XGBoost & 50 & 0.9116 & 0.9076 & 0.0040 \\
+Adult & Large & TabPFN vs LightGBM & 50 & 0.9116 & 0.9123 & -0.0006 \\
+Adult & Large & TabPFN vs CatBoost & 50 & 0.9116 & 0.9182 & -0.0066 \\
+Bank Marketing & Small & TabPFN vs XGBoost & 30 & 0.7520 & 0.6437 & 0.1083 \\
+Bank Marketing & Small & TabPFN vs LightGBM & 30 & 0.7520 & 0.6195 & 0.1325 \\
+Bank Marketing & Small & TabPFN vs CatBoost & 30 & 0.7520 & 0.7326 & 0.0194 \\
+Bank Marketing & Medium & TabPFN vs XGBoost & 25 & 0.8907 & 0.8364 & 0.0543 \\
+Bank Marketing & Medium & TabPFN vs LightGBM & 25 & 0.8907 & 0.8388 & 0.0519 \\
+Bank Marketing & Medium & TabPFN vs CatBoost & 25 & 0.8907 & 0.8800 & 0.0107 \\
+Bank Marketing & Large & TabPFN vs XGBoost & 50 & 0.9339 & 0.9060 & 0.0279 \\
+Bank Marketing & Large & TabPFN vs LightGBM & 50 & 0.9339 & 0.9131 & 0.0208 \\
+Bank Marketing & Large & TabPFN vs CatBoost & 50 & 0.9339 & 0.9225 & 0.0114 \\
+Credit-G & Small & TabPFN vs XGBoost & 30 & 0.6767 & 0.6376 & 0.0391 \\
+Credit-G & Small & TabPFN vs LightGBM & 30 & 0.6767 & 0.5814 & 0.0953 \\
+Credit-G & Small & TabPFN vs CatBoost & 30 & 0.6767 & 0.6922 & -0.0155 \\
+Credit-G & Medium & TabPFN vs XGBoost & 20 & 0.7714 & 0.7292 & 0.0422 \\
+Credit-G & Medium & TabPFN vs LightGBM & 20 & 0.7714 & 0.7273 & 0.0441 \\
+Credit-G & Medium & TabPFN vs CatBoost & 20 & 0.7714 & 0.7651 & 0.0063 \\
+\bottomrule
+\end{longtable}
+\endgroup

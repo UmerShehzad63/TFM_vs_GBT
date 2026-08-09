@@ -340,6 +340,30 @@ def create_pairwise_table(df):
     return pd.DataFrame(rows)
 
 
+def holm_adjust(p_values):
+
+    """Return Holm-adjusted p-values for a family of paired tests."""
+
+    values = np.asarray(p_values, dtype=float)
+    adjusted = np.full(len(values), np.nan)
+    valid = ~np.isnan(values)
+    valid_values = values[valid]
+
+    if len(valid_values) == 0:
+        return adjusted
+
+    order = np.argsort(valid_values)
+    running_maximum = 0.0
+    family_size = len(valid_values)
+
+    for rank, position in enumerate(order):
+        candidate = min(1.0, (family_size - rank) * valid_values[position])
+        running_maximum = max(running_maximum, candidate)
+        adjusted[np.flatnonzero(valid)[position]] = running_maximum
+
+    return adjusted
+
+
 # ============================================================
 # TRAINING REGIMES
 # ============================================================
@@ -564,6 +588,14 @@ def create_significance_summary(pairwise):
         summary["Wilcoxon_p"] < 0.05
     )
 
+    summary["Holm_Adjusted_p"] = holm_adjust(
+        summary["Wilcoxon_p"]
+    )
+
+    summary["Significant_Holm_p05"] = (
+        summary["Holm_Adjusted_p"] < 0.05
+    )
+
     summary["Direction"] = np.where(
         summary[
             "Mean_Difference_A_minus_B"
@@ -617,9 +649,17 @@ def print_key_findings(pairwise):
         pairwise["Wilcoxon_p"] < 0.05
     ]
 
+    holm_adjusted = holm_adjust(pairwise["Wilcoxon_p"])
+    holm_significant = np.sum(holm_adjusted < 0.05)
+
     print(
         f"\nSignificant comparisons (p < 0.05): "
         f"{len(significant)} / {len(pairwise)}"
+    )
+
+    print(
+        f"Significant comparisons after Holm correction: "
+        f"{holm_significant} / {len(pairwise)}"
     )
 
     print(
