@@ -1,42 +1,331 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[margin=2.5cm]{geometry}
+
+% ============================================================
+% Packages
+% ============================================================
+
+\usepackage[a4paper,margin=1in]{geometry}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+
+\usepackage{amsmath,amssymb}
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
-\usepackage{pdflscape}
 \usepackage{tabularx}
 \usepackage{array}
-\usepackage{amsmath,amssymb}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{xcolor}
-\usepackage{siunitx}
+
+% Existing CSV result tables
+\usepackage{csvsimple}
+
 \usepackage[hidelinks]{hyperref}
-\usepackage[backend=biber,style=authoryear]{biblatex}
-\addbibresource{references.bib}
-\sisetup{detect-all}
-\newcolumntype{L}{>{\raggedright\arraybackslash}p{0.31\textwidth}}
-\newcolumntype{N}{>{\raggedleft\arraybackslash}p{0.09\textwidth}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-\setlength{\emergencystretch}{2em}
-\title{An Empirical Study of Tabular Foundation Models and Gradient-Boosted Tree Algorithms Across Different Training Data Regimes}
+
+% ============================================================
+% Document information
+% ============================================================
+
+\title{
+    An Empirical Study of Tabular Foundation Models and
+    Gradient-Boosted Tree Algorithms Across Different
+    Training Data Regimes
+}
+
 \author{}
 \date{}
+
+% ============================================================
+% Figure helper
+% ============================================================
+
+\newcommand{\researchfigure}[4]{
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/#1}
+    \caption{#2}
+    \label{#3}
+\end{figure}
+}
+
+% ============================================================
+% CSV table helper
+% ============================================================
+
+\newcommand{\resulttable}[3]{
+\begin{table}[htbp]
+    \centering
+    \caption{#2}
+    \label{#3}
+    \scriptsize
+    \resizebox{\textwidth}{!}{%
+        \csvautotabular{tables/#1}
+    }
+    \normalsize
+\end{table}
+}
+
+% ============================================================
+% Document
+% ============================================================
+
 \begin{document}
+
 \maketitle
-\begin{abstract}
-\input{sections/abstract}
-\end{abstract}
-\input{sections/introduction}
-\input{sections/methodology}
-\input{sections/related_work}
-\input{sections/results}
-\input{sections/empirical_assets}
-\input{sections/discussion}
-\input{sections/conclusion}
-\printbibliography
+\thispagestyle{empty}
+
+\clearpage
+
+% ============================================================
+% Abstract
+% ============================================================
+
+\input{sections/abstract.tex}
+
+\clearpage
+
+% ============================================================
+% 1. Introduction
+% ============================================================
+
+\input{sections/Introduction.tex}
+
+% ============================================================
+% 2. Research Questions and Hypotheses
+% ============================================================
+
+\input{sections/Research Questions and Hypotheses.tex}
+
+% ============================================================
+% 3. Methodology
+% ============================================================
+
+\input{sections/methodology.tex}
+
+% ============================================================
+% 4. Related Work
+% ============================================================
+
+\input{sections/related_work.tex}
+
+% ============================================================
+% 5. Discussion and Summary of Results
+% ============================================================
+
+\input{sections/Discussion and Summary of Results.tex}
+
+% ============================================================
+% Result Tables
+% ============================================================
+
+\clearpage
+
+\section*{Results Tables}
+
+% ------------------------------------------------------------
+% Table 1
+% ------------------------------------------------------------
+
+\resulttable
+{table_best_models.csv}
+{Best-performing model for each dataset and evaluation metric.}
+{tab:best-models}
+
+% ------------------------------------------------------------
+% Table 2
+% ------------------------------------------------------------
+
+\resulttable
+{table_tabpfn_vs_trees.csv}
+{Statistical comparison of TabPFN against the gradient-boosted tree baselines.}
+{tab:tabpfn-vs-trees}
+
+% ------------------------------------------------------------
+% Table 3
+% ------------------------------------------------------------
+
+\resulttable
+{table_model_summary.csv}
+{Summary of model performance across datasets and evaluation metrics.}
+{tab:model-summary}
+
+% ------------------------------------------------------------
+% Table 4
+% ------------------------------------------------------------
+
+\resulttable
+{table_training_regimes.csv}
+{Comparison of model performance across the evaluated training-data regimes.}
+{tab:training-regimes}
+
+% ------------------------------------------------------------
+% Table 5
+% ------------------------------------------------------------
+
+\resulttable
+{computational_performance.csv}
+{Mean training and prediction time for the evaluated models.}
+{tab:computational-performance}
+
+% ============================================================
+% Research Figures
+% ============================================================
+
+\clearpage
+
+\section*{Research Figures}
+
+% ============================================================
+% Learning Curves
+% ============================================================
+
+\subsection*{Adult}
+
+\researchfigure
+{adult_roc_auc_learning_curve.png}
+{Adult ROC-AUC as a function of training-set size.}
+{fig:adult-roc}
+
+\researchfigure
+{adult_f1_learning_curve.png}
+{Adult F1-score as a function of training-set size.}
+{fig:adult-f1}
+
+\subsection*{Bank Marketing}
+
+\researchfigure
+{bank_marketing_roc_auc_learning_curve.png}
+{Bank Marketing ROC-AUC as a function of training-set size.}
+{fig:bank-roc}
+
+\researchfigure
+{bank_marketing_f1_learning_curve.png}
+{Bank Marketing F1-score as a function of training-set size.}
+{fig:bank-f1}
+
+\subsection*{Credit-G}
+
+\researchfigure
+{credit-g_roc_auc_learning_curve.png}
+{Credit-G ROC-AUC as a function of training-set size.}
+{fig:credit-roc}
+
+\researchfigure
+{credit-g_f1_learning_curve.png}
+{Credit-G F1-score as a function of training-set size.}
+{fig:credit-f1}
+
+% ============================================================
+% Additional Statistical Figures
+% ============================================================
+
+\clearpage
+
+\section*{Additional Statistical Figures}
+
+% ------------------------------------------------------------
+% Performance distributions
+% ------------------------------------------------------------
+
+\subsection*{Performance Distributions}
+
+\researchfigure
+{statistical/f1_distribution_by_dataset.png}
+{Distribution of F1-score across models and datasets.}
+{fig:f1-distribution}
+
+\researchfigure
+{statistical/roc_auc_distribution_by_dataset.png}
+{Distribution of ROC-AUC across models and datasets.}
+{fig:rocauc-distribution}
+
+% ------------------------------------------------------------
+% Paired statistical comparisons
+% ------------------------------------------------------------
+
+\subsection*{Statistical Comparisons}
+
+\researchfigure
+{statistical/tabpfn_vs_tree_forest_plot.png}
+{Paired TabPFN-minus-baseline differences with 95\% confidence intervals.}
+{fig:forest-plot}
+
+\researchfigure
+{statistical/tabpfn_effect_size_heatmap.png}
+{Rank-biserial effect sizes for TabPFN versus the gradient-boosted tree baselines. Asterisks indicate Holm-adjusted significance.}
+{fig:effect-heatmap}
+
+% ------------------------------------------------------------
+% Performance differences versus training size
+% ------------------------------------------------------------
+
+\subsection*{Performance Differences Across Training Size}
+
+\researchfigure
+{statistical/adult_roc-auc_difference.png}
+{Adult ROC-AUC difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:adult-roc-difference}
+
+\researchfigure
+{statistical/adult_f1_difference.png}
+{Adult F1-score difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:adult-f1-difference}
+
+\researchfigure
+{statistical/bank_marketing_roc-auc_difference.png}
+{Bank Marketing ROC-AUC difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:bank-roc-difference}
+
+\researchfigure
+{statistical/bank_marketing_f1_difference.png}
+{Bank Marketing F1-score difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:bank-f1-difference}
+
+\researchfigure
+{statistical/credit-g_roc-auc_difference.png}
+{Credit-G ROC-AUC difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:credit-roc-difference}
+
+\researchfigure
+{statistical/credit-g_f1_difference.png}
+{Credit-G F1-score difference between TabPFN and the gradient-boosted tree baselines across training sizes.}
+{fig:credit-f1-difference}
+
+% ------------------------------------------------------------
+% Predictive performance versus computational cost
+% ------------------------------------------------------------
+
+\subsection*{Predictive Performance and Computational Cost}
+
+\researchfigure
+{statistical/roc_auc_prediction_time_pareto.png}
+{Mean ROC-AUC versus mean prediction time across datasets and models. Prediction time is shown on a logarithmic scale.}
+{fig:rocauc-prediction-time}
+
+% ============================================================
+% Conclusion
+% ============================================================
+
+\clearpage
+
+\input{sections/conclusion.tex}
+
+% ============================================================
+% Limitations
+% ============================================================
+
+\input{sections/limitations.tex}
+
+% ============================================================
+% References
+% ============================================================
+
+\clearpage
+
+\input{sections/references.tex}
+
 \end{document}

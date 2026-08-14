@@ -1,0 +1,61 @@
+Dataset,Model,Metric,N,Mean,Std,Min,Max
+Adult,CatBoost,Accuracy,105,0.8409,0.034,0.6993,0.8765
+Adult,CatBoost,Precision,105,0.733,0.0897,0.2,0.8286
+Adult,CatBoost,Recall,105,0.5194,0.1603,0.0719,0.6621
+Adult,CatBoost,F1,105,0.5936,0.1509,0.1181,0.7157
+Adult,CatBoost,ROC_AUC,105,0.8787,0.065,0.5248,0.9288
+Adult,LightGBM,Accuracy,105,0.825,0.0408,0.7529,0.8754
+Adult,LightGBM,Precision,105,0.5889,0.2529,0.0,0.7884
+Adult,LightGBM,Recall,105,0.4962,0.221,0.0,0.6638
+Adult,LightGBM,F1,105,0.5361,0.2342,0.0,0.7172
+Adult,LightGBM,ROC_AUC,105,0.8223,0.1413,0.5,0.9286
+Adult,TabPFN,Accuracy,105,0.835,0.0351,0.6792,0.8637
+Adult,TabPFN,Precision,105,0.7031,0.1289,0.0,1.0
+Adult,TabPFN,Recall,105,0.5238,0.1664,0.0,0.7164
+Adult,TabPFN,F1,105,0.5838,0.1664,0.0,0.6881
+Adult,TabPFN,ROC_AUC,105,0.8744,0.0675,0.5402,0.9176
+Adult,XGBoost,Accuracy,105,0.8252,0.0375,0.7315,0.8727
+Adult,XGBoost,Precision,105,0.6365,0.1668,0.0,0.7738
+Adult,XGBoost,Recall,105,0.5334,0.1701,0.0,0.6916
+Adult,XGBoost,F1,105,0.5744,0.1688,0.0,0.7141
+Adult,XGBoost,ROC_AUC,105,0.8463,0.0987,0.5,0.9265
+Bank Marketing,CatBoost,Accuracy,105,0.8967,0.0096,0.8808,0.9124
+Bank Marketing,CatBoost,Precision,105,0.6022,0.1171,0.0,0.8182
+Bank Marketing,CatBoost,Recall,105,0.2721,0.1709,0.0,0.5038
+Bank Marketing,CatBoost,F1,105,0.3464,0.1943,0.0,0.5737
+Bank Marketing,CatBoost,ROC_AUC,105,0.8581,0.0931,0.5092,0.9338
+Bank Marketing,LightGBM,Accuracy,105,0.8888,0.0145,0.8466,0.9104
+Bank Marketing,LightGBM,Precision,105,0.4552,0.2149,0.0,0.6546
+Bank Marketing,LightGBM,Recall,105,0.2861,0.16,0.0,0.4962
+Bank Marketing,LightGBM,F1,105,0.3479,0.1835,0.0,0.5645
+Bank Marketing,LightGBM,ROC_AUC,105,0.8115,0.143,0.5,0.9341
+Bank Marketing,TabPFN,Accuracy,105,0.898,0.0137,0.8338,0.9153
+Bank Marketing,TabPFN,Precision,105,0.5661,0.1927,0.0,1.0
+Bank Marketing,TabPFN,Recall,105,0.3201,0.1924,0.0,0.5643
+Bank Marketing,TabPFN,F1,105,0.386,0.2046,0.0,0.6073
+Bank Marketing,TabPFN,ROC_AUC,105,0.8716,0.0939,0.4772,0.9419
+Bank Marketing,XGBoost,Accuracy,105,0.8874,0.014,0.8283,0.907
+Bank Marketing,XGBoost,Precision,105,0.4676,0.1849,0.0,0.6287
+Bank Marketing,XGBoost,Recall,105,0.3045,0.1517,0.0,0.5009
+Bank Marketing,XGBoost,F1,105,0.3645,0.167,0.0,0.5576
+Bank Marketing,XGBoost,ROC_AUC,105,0.8145,0.1305,0.5,0.9272
+Credit-G,CatBoost,Accuracy,50,0.7212,0.0296,0.655,0.79
+Credit-G,CatBoost,Precision,50,0.7542,0.0274,0.7111,0.8062
+Credit-G,CatBoost,Recall,50,0.8957,0.0338,0.8,0.9571
+Credit-G,CatBoost,F1,50,0.8182,0.0181,0.7677,0.86
+Credit-G,CatBoost,ROC_AUC,50,0.7213,0.0557,0.5775,0.805
+Credit-G,LightGBM,Accuracy,50,0.704,0.0296,0.65,0.81
+Credit-G,LightGBM,Precision,50,0.7532,0.0421,0.7,0.84
+Credit-G,LightGBM,Recall,50,0.8717,0.0928,0.6929,1.0
+Credit-G,LightGBM,F1,50,0.8036,0.0256,0.7462,0.869
+Credit-G,LightGBM,ROC_AUC,50,0.6398,0.1025,0.5,0.7796
+Credit-G,TabPFN,Accuracy,50,0.7145,0.03,0.65,0.775
+Credit-G,TabPFN,Precision,50,0.755,0.0397,0.6984,0.8276
+Credit-G,TabPFN,Recall,50,0.8859,0.0639,0.7571,1.0
+Credit-G,TabPFN,F1,50,0.8126,0.0192,0.7596,0.8421
+Credit-G,TabPFN,ROC_AUC,50,0.7146,0.0639,0.585,0.8062
+Credit-G,XGBoost,Accuracy,50,0.6975,0.0351,0.595,0.78
+Credit-G,XGBoost,Precision,50,0.7621,0.0357,0.7,0.8333
+Credit-G,XGBoost,Recall,50,0.832,0.0695,0.7071,1.0
+Credit-G,XGBoost,F1,50,0.7931,0.0274,0.7117,0.8451
+Credit-G,XGBoost,ROC_AUC,50,0.6742,0.071,0.4453,0.775

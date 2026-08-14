@@ -1,0 +1,15 @@
+\section{Limitations}\label{limitations}
+
+Several limitations should be considered when interpreting the findings.
+
+First, the study evaluates only three datasets. Although Adult, Bank Marketing, and Credit-G provide variation in dataset size and classification characteristics, they cannot represent the full diversity of real-world tabular machine-learning problems.
+
+Second, only one tabular foundation model is evaluated. The findings therefore concern TabPFN specifically and should not automatically be generalized to all tabular foundation models.
+
+Third, the benchmark evaluates binary classification only. The conclusions may not transfer directly to multiclass classification, regression, ranking, or other tabular prediction problems.
+
+Fourth, Credit-G has a substantially smaller training partition than Adult and Bank Marketing. As a result, it could not be evaluated across the same large-data training regimes. Comparisons between datasets should therefore be interpreted with this difference in experimental coverage in mind.
+
+Fifth, the computational measurements are specific to the experimental environment and implementation used for the benchmark. Training and prediction times can depend on hardware, software versions, preprocessing, model configuration, and system load. The reported timings should therefore be interpreted as measurements of this experimental setup rather than universal computational costs.
+
+Finally, the benchmark does not attempt to identify the underlying causal characteristics that make one dataset more favourable to TabPFN than another. The observed dataset-level differences demonstrate that such variation exists, but additional controlled experiments would be required to determine which feature or dataset properties are responsible.

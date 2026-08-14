@@ -394,9 +394,7 @@ def create_learning_curves(learning):
             plt.xlabel("Training Samples")
             plt.ylabel(metric)
 
-            plt.title(
-                f"{dataset}: {metric} vs Training Size"
-            )
+          
 
             plt.legend()
             plt.grid(True, alpha=0.25)
@@ -469,9 +467,6 @@ def create_training_time_figure(df):
         plt.xlabel("Training Samples")
         plt.ylabel("Training Time (seconds)")
 
-        plt.title(
-            f"{dataset}: Training Time vs Training Size"
-        )
 
         plt.legend()
         plt.grid(True, alpha=0.25)
